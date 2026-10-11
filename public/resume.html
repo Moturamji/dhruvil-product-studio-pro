@@ -3,21 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhruvil Bhingradiya - Full-Stack & AI Product Developer Resume</title>
+  <title>Dhruvil Bhingradiya — Full-Stack & AI Product Developer Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
     :root {
       --primary: #0f172a;
       --secondary: #334155;
       --muted: #64748b;
-      --accent: #1d4ed8;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
       --accent-light: #eff6ff;
       --accent-border: #bfdbfe;
+      --emerald: #059669;
+      --emerald-light: #ecfdf5;
+      --emerald-border: #a7f3d0;
       --border: #cbd5e1;
       --border-subtle: #e2e8f0;
       --bg: #ffffff;
-      --tag-bg: #f8fafc;
+      --surface: #f8fafc;
+      --surface-hover: #f1f5f9;
+      --card-border: #e2e8f0;
     }
 
     * {
@@ -29,297 +36,570 @@
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: var(--primary);
-      background-color: #525659;
-      line-height: 1.33;
-      font-size: 8.6pt;
+      background-color: #475569;
+      line-height: 1.35;
+      font-size: 8.4pt;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .resume-container {
       width: 8.5in;
-      margin: 15px auto;
+      margin: 16px auto;
       background: var(--bg);
     }
 
     .page {
       width: 8.5in;
       min-height: 11in;
-      padding: 0.35in 0.42in;
+      padding: 0.32in 0.40in;
       background: white;
       position: relative;
       box-sizing: border-box;
     }
 
     .page + .page {
-      margin-top: 15px;
+      margin-top: 16px;
     }
 
-    /* Header styling */
+    /* ==========================================================================
+       HEADER STYLING
+       ========================================================================== */
     .header {
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 8px;
-      margin-bottom: 8px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 9px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
     }
 
-    .name-title-row {
+    .header::after {
+      content: "";
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(37, 99, 235, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header-top {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 3px;
+      align-items: flex-start;
+      margin-bottom: 7px;
     }
 
-    .name {
-      font-size: 21pt;
+    .name-title-area h1.name {
+      font-size: 19.5pt;
       font-weight: 800;
       letter-spacing: -0.5px;
-      color: var(--primary);
-      line-height: 1;
+      color: #ffffff;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .title {
-      font-size: 10.2pt;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.2px;
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       margin-top: 3px;
     }
 
-    .header-aside {
-      text-align: right;
-      font-size: 8.1pt;
-      color: var(--secondary);
-      font-weight: 600;
-      line-height: 1.25;
+    .title-pill {
+      background: rgba(37, 99, 235, 0.25);
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      color: #93c5fd;
+      font-size: 7.8pt;
+      font-weight: 700;
+      padding: 1.5px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.2px;
     }
 
-    .contacts-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 8.3pt;
-      color: var(--secondary);
-      margin-top: 4px;
+    .title-sub {
+      color: #cbd5e1;
+      font-size: 8.2pt;
+      font-weight: 500;
     }
 
-    .contact-item {
+    .header-badge {
       display: inline-flex;
       align-items: center;
-      gap: 3px;
+      gap: 5px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6ee7b7;
+      font-size: 7.4pt;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      white-space: nowrap;
     }
 
-    .contact-item a {
-      color: var(--secondary);
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.3);
+    }
+
+    /* Interactive contact pill bar */
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 7px;
+      padding-top: 7px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .interactive-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #f1f5f9;
       text-decoration: none;
+      font-size: 7.8pt;
+      font-weight: 500;
+      padding: 2.5px 9px;
+      border-radius: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .interactive-pill:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .interactive-pill.accent {
+      background: rgba(37, 99, 235, 0.35);
+      border-color: rgba(147, 197, 253, 0.45);
+      color: #ffffff;
       font-weight: 600;
     }
 
-    .contact-sep {
-      color: var(--border);
+    .interactive-pill svg {
+      width: 11px;
+      height: 11px;
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    /* Section styling */
+    /* ==========================================================================
+       METRICS / STATS STRIP
+       ========================================================================== */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin-bottom: 9px;
+    }
+
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 5px 8px;
+      text-align: center;
+      position: relative;
+      border-left: 3px solid var(--accent);
+    }
+
+    .metric-val {
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .metric-lbl {
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-top: 1.5px;
+    }
+
+    /* ==========================================================================
+       SECTION HEADINGS
+       ========================================================================== */
     .section {
-      margin-bottom: 8px;
+      margin-bottom: 7.5px;
     }
 
     .section-title {
-      font-size: 9.1pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--primary);
-      border-bottom: 1.2px solid var(--border);
-      padding-bottom: 2px;
-      margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 8.6pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--primary);
+      border-bottom: 1.5px solid var(--primary);
+      padding-bottom: 2.5px;
+      margin-bottom: 5.5px;
     }
 
-    .section-title .section-tag {
-      font-size: 7.2pt;
-      font-weight: 600;
+    .section-title-left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .section-icon {
+      width: 12px;
+      height: 12px;
       color: var(--accent);
-      text-transform: none;
-      letter-spacing: 0;
+      flex-shrink: 0;
     }
 
-    /* Profile text */
-    .profile-text {
-      font-size: 8.4pt;
+    .section-badge {
+      font-size: 6.9pt;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0.2px;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      padding: 1px 6px;
+      border-radius: 12px;
+    }
+
+    /* ==========================================================================
+       EXECUTIVE PROFILE
+       ========================================================================== */
+    .profile-card {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin-bottom: 7px;
+      font-size: 8.1pt;
       color: var(--secondary);
-      line-height: 1.36;
+      line-height: 1.34;
       text-align: justify;
     }
 
-    .profile-text strong {
+    .profile-card strong {
       color: var(--primary);
       font-weight: 700;
     }
 
-    /* Skills Grid */
-    .skills-grid {
+    /* ==========================================================================
+       SKILLS GROUPED CARDS
+       ========================================================================== */
+    .skills-container {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.2px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5.5px;
+      margin-bottom: 8px;
     }
 
-    .skill-category {
-      display: flex;
-      font-size: 8.2pt;
-      line-height: 1.27;
+    .skill-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 5px;
+      padding: 5px 8px;
     }
 
-    .skill-label {
-      width: 152px;
-      flex-shrink: 0;
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .skill-items {
-      color: var(--secondary);
-    }
-
-    /* Projects / Experience items */
-    .item-block {
-      margin-bottom: 6px;
-    }
-
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1.5px;
-    }
-
-    .item-title {
-      font-size: 9.2pt;
+    .skill-card-title {
+      font-size: 7.4pt;
       font-weight: 800;
       color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 3.5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    .item-subtitle {
-      font-size: 8.2pt;
-      font-weight: 700;
-      color: var(--accent);
-      margin-left: 6px;
+    .skill-card-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
     }
 
-    .item-meta {
-      font-size: 7.9pt;
-      color: var(--muted);
-      font-weight: 600;
-      text-align: right;
-    }
-
-    .item-badges {
+    .skill-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 3.5px;
-      margin: 1.5px 0 3px 0;
+      gap: 3px;
     }
 
-    .badge {
-      font-size: 7.1pt;
+    .tech-pill {
+      font-size: 6.9pt;
       font-weight: 600;
-      background: var(--tag-bg);
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
       color: var(--secondary);
-      padding: 0.6px 5px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      white-space: nowrap;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .tech-pill.primary {
+      background: var(--accent-light);
+      border-color: var(--accent-border);
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       FEATURED PROJECT CARDS
+       ========================================================================== */
+    .project-card {
+      background: #ffffff;
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 6px;
+      position: relative;
+      border-left: 3.5px solid var(--primary);
+    }
+
+    .project-card.accent-left {
+      border-left-color: var(--accent);
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 3px;
+    }
+
+    .project-title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .project-title {
+      font-size: 9.0pt;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.1px;
+    }
+
+    .project-role-tag {
+      font-size: 7.3pt;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.5px 5px;
+      border-radius: 3px;
+      border: 1px solid var(--accent-border);
+    }
+
+    .project-meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--surface);
+      border: 1px solid var(--border-subtle);
+      padding: 1px 6px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+    .project-meta-pill a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin: 2px 0 4px 0;
+    }
+
+    .badge-item {
+      font-size: 6.8pt;
+      font-weight: 600;
+      background: var(--surface);
+      color: var(--secondary);
+      padding: 0.5px 5px;
       border-radius: 3px;
       border: 1px solid var(--border-subtle);
     }
 
-    .badge.highlight {
-      background: var(--accent-light);
-      color: var(--accent);
-      border-color: var(--accent-border);
+    .badge-item.highlight {
+      background: #eff6ff;
+      color: #1e40af;
+      border-color: #bfdbfe;
       font-weight: 700;
     }
 
-    ul.bullet-list {
+    /* Structured Bullet Points */
+    .bullet-list {
       list-style-type: none;
       padding-left: 0;
     }
 
-    ul.bullet-list li {
+    .bullet-list li {
       position: relative;
       padding-left: 11px;
-      margin-bottom: 2px;
-      font-size: 8.2pt;
+      margin-bottom: 2.2px;
+      font-size: 7.95pt;
       color: var(--secondary);
-      line-height: 1.31;
+      line-height: 1.30;
     }
 
-    ul.bullet-list li::before {
-      content: "•";
+    .bullet-list li::before {
+      content: "▸";
       position: absolute;
-      left: 1px;
-      top: -1px;
+      left: 0px;
+      top: -0.5px;
       color: var(--accent);
-      font-size: 8.8pt;
-      font-weight: bold;
+      font-size: 8pt;
+      font-weight: 800;
     }
 
-    ul.bullet-list li strong {
+    .bullet-list li strong {
       color: var(--primary);
       font-weight: 700;
     }
 
-    /* Callout Box for AI Coding */
-    .callout-box {
-      background: var(--tag-bg);
-      border-left: 3px solid var(--accent);
-      padding: 3.5px 7px;
-      border-radius: 0 3px 3px 0;
-      margin: 2px 0 3.5px 0;
-      font-size: 8.1pt;
-      color: var(--secondary);
+    /* ==========================================================================
+       PAGE 2 SPECIFICS
+       ========================================================================== */
+    #page-2 .section {
+      margin-bottom: 6.5px;
+    }
+
+    #page-2 .project-card {
+      margin-bottom: 5.5px;
+      padding: 6px 9px;
+    }
+
+    #page-2 .bullet-list li {
+      margin-bottom: 2px;
+      font-size: 7.9pt;
       line-height: 1.29;
     }
 
-    .callout-box strong {
+    /* AI Methodology Pipeline */
+    .ai-pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      margin-bottom: 5px;
+    }
+
+    .ai-step-card {
+      background: var(--surface);
+      border: 1px solid var(--card-border);
+      border-radius: 5px;
+      padding: 5px 7px;
+      border-top: 2.5px solid var(--accent);
+    }
+
+    .ai-step-title {
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .ai-step-desc {
+      font-size: 7.0pt;
+      color: var(--secondary);
+      line-height: 1.24;
+    }
+
+    /* Footer availability bar */
+    .availability-card {
+      background: linear-gradient(90deg, #f8fafc 0%, #eff6ff 100%);
+      border: 1px solid var(--accent-border);
+      border-radius: 6px;
+      padding: 6px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .avail-text {
+      font-size: 7.5pt;
+      color: var(--secondary);
+      line-height: 1.25;
+    }
+
+    .avail-text strong {
       color: var(--primary);
     }
 
-    /* Page 2 slightly tuned spacing */
-    #page-2 .section {
-      margin-bottom: 7px;
-    }
-    #page-2 .item-block {
-      margin-bottom: 5.5px;
-    }
-    #page-2 ul.bullet-list li {
-      margin-bottom: 1.8px;
-      font-size: 8.15pt;
-      line-height: 1.30;
+    .avail-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--emerald-light);
+      border: 1px solid var(--emerald-border);
+      color: var(--emerald);
+      font-size: 7.2pt;
+      font-weight: 700;
+      padding: 2.5px 7px;
+      border-radius: 12px;
+      white-space: nowrap;
     }
 
     /* Print media rules */
     @page {
       size: letter portrait;
-      margin: 0.33in 0.40in;
+      margin: 0.30in 0.38in;
     }
 
     @media print {
       body {
-        background: white;
+        background: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
       .resume-container {
-        width: 100%;
-        margin: 0;
+        width: 100% !important;
+        margin: 0 !important;
+        box-shadow: none !important;
       }
       .page {
-        width: 100%;
-        min-height: 0;
-        padding: 0;
-        margin: 0;
-        page-break-after: always;
-        break-after: page;
+        width: 100% !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        page-break-after: always !important;
+        break-after: page !important;
       }
       .page:last-child {
-        page-break-after: avoid;
-        break-after: avoid;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
       }
     }
   </style>
@@ -327,98 +607,181 @@
 <body>
 
 <div class="resume-container">
-  <!-- PAGE 1 -->
+  <!-- =========================================================================
+       PAGE 1
+       ========================================================================= -->
   <div class="page" id="page-1">
+    <!-- MODERN EXECUTIVE HEADER -->
     <header class="header">
-      <div class="name-title-row">
-        <div>
+      <div class="header-top">
+        <div class="name-title-area">
           <h1 class="name">Dhruvil Bhingradiya</h1>
-          <div class="title">Full-Stack & Product Developer &bull; Web, Mobile & Distributed Systems</div>
+          <div class="title-row">
+            <span class="title-pill">Full-Stack & Product Developer</span>
+            <span class="title-sub">• Web, Mobile & Distributed Systems</span>
+          </div>
         </div>
-        <div class="header-aside">
-          Remote (Full US ET/PT Overlap)<br>
-          3+ Years Professional Exp. &bull; Extreme Ownership
+        <div class="header-badge">
+          <span class="pulse-dot"></span>
+          Remote • US ET/PT Overlap • 3+ Yrs Exp
         </div>
       </div>
-      <div class="contacts-row">
-        <span class="contact-item">
-          <strong>Email:</strong> <a href="mailto:dhruvilbhingradiya021@gmail.com">dhruvilbhingradiya021@gmail.com</a>
+
+      <!-- INTERACTIVE CONTACT & PORTFOLIO PILLS -->
+      <div class="contact-bar">
+        <!-- EMAIL -->
+        <a href="mailto:dhruvilbhingradiya021@gmail.com" class="interactive-pill accent" title="Send direct email">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          dhruvilbhingradiya021@gmail.com
+        </a>
+
+        <!-- LIVE PRODUCTS -->
+        <a href="https://tool-web.dev" target="_blank" rel="noopener noreferrer" class="interactive-pill" title="Live WebAssembly & Developer Platform">
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          tool-web.dev <span style="font-size: 6.8pt; color: #93c5fd;">[Live Platform ↗]</span>
+        </a>
+
+        <!-- LOCATION & ENGAGEMENT -->
+        <span class="interactive-pill" style="cursor: default;">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          India • Available Globally / Remote
         </span>
-        <span class="contact-sep">&bull;</span>
-        <span class="contact-item">
-          <strong>Live Products:</strong> <a href="https://tool-web.dev" target="_blank">tool-web.dev</a>
+
+        <!-- DISCIPLINE BADGE -->
+        <span class="interactive-pill" style="cursor: default;">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Extreme Ownership & System Architecture
         </span>
       </div>
     </header>
 
+    <!-- KEY IMPACT METRICS STRIP -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val">3+ Years</div>
+        <div class="metric-lbl">Production Exp.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">5+ Systems</div>
+        <div class="metric-lbl">Delivered End-to-End</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">100% Crash-Free</div>
+        <div class="metric-lbl">Store Session Metric</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">3x Velocity</div>
+        <div class="metric-lbl">AI-Assisted Verified Ship</div>
+      </div>
+    </div>
+
     <!-- EXECUTIVE PROFILE -->
     <section class="section">
       <h2 class="section-title">
-        <span>Executive Profile</span>
-        <span class="section-tag">Production Focus &bull; Extreme Ownership</span>
+        <span class="section-title-left">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Executive Engineering Profile
+        </span>
+        <span class="section-badge">Production Focus & Extreme Ownership</span>
       </h2>
-      <p class="profile-text">
+      <div class="profile-card">
         Full-Stack Product Developer with <strong>3+ years of professional engineering experience</strong> taking software systems from blank canvases to production deployment. Proven track record architecting complex multi-role digital products, including a <strong>complete LMS & video-streaming infrastructure (Lux Trader)</strong>, a <strong>3-sided marketplace & dynamic booking platform</strong>, and a <strong>client-side WebAssembly utility suite (ToolWeb)</strong>. Operates with strict Extreme Ownership: rapidly mastering unfamiliar codebases, decomposing ambiguous stakeholder requests into resilient technical specifications, and delivering hardened web and mobile applications with clear technical documentation. Daily practitioner of high-leverage <strong>AI-assisted engineering</strong> (Claude Code, Cursor, Copilot, Grok)—enforcing prompt decomposition, AST verification, and automated regression testing to ship clean, regression-free code at 3x velocity.
-      </p>
+      </div>
     </section>
 
-    <!-- TECHNICAL SKILLS -->
+    <!-- CORE TECHNICAL COMPETENCIES (STRUCTURED INTERACTIVE CHIP CARDS) -->
     <section class="section">
       <h2 class="section-title">
-        <span>Core Technical Competencies</span>
-        <span class="section-tag">Full-Stack & Systems Architecture</span>
+        <span class="section-title-left">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Technical Competencies & Stack
+        </span>
+        <span class="section-badge">Full-Stack & Systems Architecture</span>
       </h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <span class="skill-label">Frontend & Web:</span>
-          <span class="skill-items">TypeScript, JavaScript (ES6+), React, TanStack Query/Router, HTML5/CSS3, Tailwind CSS, WebAssembly (Rust), Web APIs</span>
+      <div class="skills-container">
+        <!-- FRONTEND & WEB -->
+        <div class="skill-card">
+          <div class="skill-card-title"><span class="skill-card-dot"></span>Frontend & Web Engineering</div>
+          <div class="skill-pills">
+            <span class="tech-pill primary">TypeScript</span>
+            <span class="tech-pill primary">React</span>
+            <span class="tech-pill">TanStack Query/Router</span>
+            <span class="tech-pill">Tailwind CSS</span>
+            <span class="tech-pill primary">WebAssembly (Rust)</span>
+            <span class="tech-pill">HTML5/CSS3</span>
+            <span class="tech-pill">Web APIs</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <span class="skill-label">Mobile & Cross-Platform:</span>
-          <span class="skill-items">Flutter & Dart (Android & iOS), Local-First Architecture, SQLite, State Management (Riverpod/Provider), FCM Push Notifications</span>
+
+        <!-- MOBILE & CROSS-PLATFORM -->
+        <div class="skill-card">
+          <div class="skill-card-title"><span class="skill-card-dot"></span>Mobile & Cross-Platform</div>
+          <div class="skill-pills">
+            <span class="tech-pill primary">Flutter & Dart</span>
+            <span class="tech-pill primary">Android & iOS</span>
+            <span class="tech-pill">Local-First DB</span>
+            <span class="tech-pill">SQLite</span>
+            <span class="tech-pill">Riverpod & Provider</span>
+            <span class="tech-pill">FCM Push</span>
+            <span class="tech-pill">Background Alarms</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <span class="skill-label">Backend & Cloud:</span>
-          <span class="skill-items">Node.js, Express, RESTful APIs, Firebase (Auth, Firestore, Cloud Functions, Storage), Supabase, PostgreSQL, SQLite</span>
+
+        <!-- BACKEND & CLOUD -->
+        <div class="skill-card">
+          <div class="skill-card-title"><span class="skill-card-dot"></span>Backend & Cloud Services</div>
+          <div class="skill-pills">
+            <span class="tech-pill primary">Node.js</span>
+            <span class="tech-pill primary">Express</span>
+            <span class="tech-pill">RESTful APIs</span>
+            <span class="tech-pill primary">Firebase Suite</span>
+            <span class="tech-pill">Supabase</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Cloud Functions</span>
+          </div>
         </div>
-        <div class="skill-category">
-          <span class="skill-label">Architecture & Media:</span>
-          <span class="skill-items">Multi-Sided Marketplaces, LMS & Training Systems, FFmpeg Video Transcoding, HLS Multi-Bitrate Streaming, Multi-Role RBAC</span>
-        </div>
-        <div class="skill-category">
-          <span class="skill-label">Payments & Integrations:</span>
-          <span class="skill-items">Dynamic Payment Architectures, Razorpay & Stripe Checkout, Webhooks, Third-Party REST Integrations, Inventory/Booking Locks</span>
-        </div>
-        <div class="skill-category">
-          <span class="skill-label">AI-Assisted Workflow:</span>
-          <span class="skill-items">Claude Code, Cursor, Antigravity, Grok, GitHub Copilot (Prompt chaining, AST refactoring, automated test synthesis, verification harnesses)</span>
+
+        <!-- MEDIA, PAYMENTS & AI -->
+        <div class="skill-card">
+          <div class="skill-card-title"><span class="skill-card-dot"></span>Media, Payments & AI Workflow</div>
+          <div class="skill-pills">
+            <span class="tech-pill primary">FFmpeg & HLS</span>
+            <span class="tech-pill">Razorpay & Stripe</span>
+            <span class="tech-pill">Optimistic Locks</span>
+            <span class="tech-pill primary">Claude Code</span>
+            <span class="tech-pill primary">Cursor</span>
+            <span class="tech-pill">AST Verification</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CORE FEATURED SYSTEMS & PRODUCTION WORK -->
+    <!-- FEATURED PRODUCTION SYSTEMS (PAGE 1) -->
     <section class="section">
       <h2 class="section-title">
-        <span>Featured Production Systems</span>
-        <span class="section-tag">Architected & Delivered End-to-End</span>
+        <span class="section-title-left">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Featured Production Systems
+        </span>
+        <span class="section-badge">Architected & Delivered End-to-End</span>
       </h2>
 
       <!-- LUX TRADER -->
-      <div class="item-block">
-        <div class="item-header">
-          <div>
-            <span class="item-title">Lux Trader — Production Trading LMS & Video Infrastructure</span>
-            <span class="item-subtitle">Full-Stack Product Developer</span>
+      <div class="project-card accent-left">
+        <div class="project-card-header">
+          <div class="project-title-group">
+            <span class="project-title">Lux Trader — Production Trading LMS & Video Infrastructure</span>
+            <span class="project-role-tag">Full-Stack Product Developer</span>
           </div>
-          <div class="item-meta">Client Delivery &bull; Live Ecosystem</div>
+          <span class="project-meta-pill">Client Delivery • Live Ecosystem</span>
         </div>
-        <div class="item-badges">
-          <span class="badge highlight">LMS / Training Platform</span>
-          <span class="badge highlight">Flutter Mobile App</span>
-          <span class="badge">Node.js Backend & Admin API</span>
-          <span class="badge">FFmpeg / HLS Video Pipeline</span>
-          <span class="badge">Firebase & Cloud Functions</span>
-          <span class="badge">Razorpay Dynamic Payments</span>
+        <div class="badge-bar">
+          <span class="badge-item highlight">LMS / Training Platform</span>
+          <span class="badge-item highlight">Flutter Mobile App</span>
+          <span class="badge-item">Node.js Backend & Admin API</span>
+          <span class="badge-item">FFmpeg / HLS Video Pipeline</span>
+          <span class="badge-item">Firebase & Cloud Functions</span>
+          <span class="badge-item">Razorpay Dynamic Payments</span>
         </div>
         <ul class="bullet-list">
           <li>
@@ -440,21 +803,21 @@
       </div>
 
       <!-- CINEMA & SERVICE MARKETPLACE PLATFORM -->
-      <div class="item-block">
-        <div class="item-header">
-          <div>
-            <span class="item-title">Cinema & Service Multi-Role Marketplace Platform</span>
-            <span class="item-subtitle">Platform Architect & Lead Developer</span>
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-title-group">
+            <span class="project-title">Cinema & Service Multi-Role Marketplace Platform</span>
+            <span class="project-role-tag">Platform Architect & Lead Developer</span>
           </div>
-          <div class="item-meta">Multi-Role Commercial Product</div>
+          <span class="project-meta-pill">Multi-Role Commercial Product</span>
         </div>
-        <div class="item-badges">
-          <span class="badge highlight">Multi-Sided Marketplace</span>
-          <span class="badge highlight">3 Distinct Roles (Buyer / Vendor / Super Admin)</span>
-          <span class="badge">Dynamic Seating Engine</span>
-          <span class="badge">Tiered Pricing Matrices</span>
-          <span class="badge">Reservation Lock Engine</span>
-          <span class="badge">Digital QR Ticketing</span>
+        <div class="badge-bar">
+          <span class="badge-item highlight">Multi-Sided Marketplace</span>
+          <span class="badge-item highlight">3 Roles (Buyer / Vendor / Super Admin)</span>
+          <span class="badge-item">Dynamic Seating Engine</span>
+          <span class="badge-item">Tiered Pricing Matrices</span>
+          <span class="badge-item">Reservation Lock Engine</span>
+          <span class="badge-item">Digital QR Ticketing</span>
         </div>
         <ul class="bullet-list">
           <li>
@@ -477,30 +840,37 @@
     </section>
   </div>
 
-  <!-- PAGE 2 -->
+  <!-- =========================================================================
+       PAGE 2
+       ========================================================================= -->
   <div class="page" id="page-2">
-    <!-- TOOLWEB + MOBILE SYSTEMS -->
+    <!-- FEATURED SYSTEMS CONTINUED -->
     <section class="section" style="margin-top: 0;">
       <h2 class="section-title">
-        <span>Featured Production Systems (Continued)</span>
-        <span class="section-tag">Performance & Client-Side Engineering</span>
+        <span class="section-title-left">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          Featured Production Systems (Continued)
+        </span>
+        <span class="section-badge">Client-Side Compute & Store Apps</span>
       </h2>
 
       <!-- TOOLWEB -->
-      <div class="item-block">
-        <div class="item-header">
-          <div>
-            <span class="item-title">ToolWeb — Privacy-First Web Utility & Compute Platform</span>
-            <span class="item-subtitle">Creator & Lead Engineer</span>
+      <div class="project-card accent-left">
+        <div class="project-card-header">
+          <div class="project-title-group">
+            <span class="project-title">ToolWeb — Privacy-First Web Utility & Compute Platform</span>
+            <span class="project-role-tag">Creator & Lead Engineer</span>
           </div>
-          <div class="item-meta"><a href="https://tool-web.dev" target="_blank" style="color: var(--accent); text-decoration: none;">tool-web.dev</a> &bull; Production Live</div>
+          <span class="project-meta-pill">
+            <a href="https://tool-web.dev" target="_blank" rel="noopener noreferrer">tool-web.dev ↗</a> • Production Live
+          </span>
         </div>
-        <div class="item-badges">
-          <span class="badge highlight">WebAssembly (Rust Engine)</span>
-          <span class="badge highlight">TypeScript / ESNext</span>
-          <span class="badge">Client-Side Compute</span>
-          <span class="badge">20+ Developer Tools</span>
-          <span class="badge">Zero Data Egress</span>
+        <div class="badge-bar">
+          <span class="badge-item highlight">WebAssembly (Rust Engine)</span>
+          <span class="badge-item highlight">TypeScript / ESNext</span>
+          <span class="badge-item">Client-Side Compute</span>
+          <span class="badge-item">20+ Developer Tools</span>
+          <span class="badge-item">Zero Data Egress</span>
         </div>
         <ul class="bullet-list">
           <li>
@@ -519,20 +889,20 @@
       </div>
 
       <!-- MOBILE & LOCAL-FIRST PRODUCTS -->
-      <div class="item-block">
-        <div class="item-header">
-          <div>
-            <span class="item-title">Production Mobile & Local-First Systems: StyleCalc & TaskFlow</span>
-            <span class="item-subtitle">Mobile Engineer</span>
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-title-group">
+            <span class="project-title">Production Mobile & Local-First Systems: StyleCalc & TaskFlow</span>
+            <span class="project-role-tag">Mobile Engineer</span>
           </div>
-          <div class="item-meta">Google Play Store &bull; Open Architecture</div>
+          <span class="project-meta-pill">Google Play Store • Open Architecture</span>
         </div>
-        <div class="item-badges">
-          <span class="badge highlight">Google Play Live</span>
-          <span class="badge">Flutter & Dart</span>
-          <span class="badge">Offline-First Local Storage</span>
-          <span class="badge">Hardware Background Alarms</span>
-          <span class="badge">Zero-Crash Metric</span>
+        <div class="badge-bar">
+          <span class="badge-item highlight">Google Play Live</span>
+          <span class="badge-item">Flutter & Dart</span>
+          <span class="badge-item">Offline-First Local Storage</span>
+          <span class="badge-item">Hardware Background Alarms</span>
+          <span class="badge-item">100% Crash-Free Metric</span>
         </div>
         <ul class="bullet-list">
           <li>
@@ -551,16 +921,19 @@
     <!-- PROFESSIONAL WORK HISTORY -->
     <section class="section">
       <h2 class="section-title">
-        <span>Professional Experience & Delivery Track Record</span>
-        <span class="section-tag">Extreme Ownership & Execution</span>
+        <span class="section-title-left">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Professional Experience & Delivery Track Record
+        </span>
+        <span class="section-badge">Extreme Ownership & Execution</span>
       </h2>
-      <div class="item-block">
-        <div class="item-header">
-          <div>
-            <span class="item-title">Full-Stack & Product Developer</span>
-            <span class="item-subtitle">Independent Engineering & Client Delivery</span>
+      <div class="project-card">
+        <div class="project-card-header">
+          <div class="project-title-group">
+            <span class="project-title">Full-Stack & Product Developer</span>
+            <span class="project-role-tag">Independent Engineering & Client Delivery</span>
           </div>
-          <div class="item-meta">2022 &ndash; Present (3+ Years) &bull; Remote</div>
+          <span class="project-meta-pill">2022 – Present (3+ Years) • Remote</span>
         </div>
         <ul class="bullet-list">
           <li>
@@ -582,21 +955,33 @@
       </div>
     </section>
 
-    <!-- RIGOROUS AI-ASSISTED CODING METHODOLOGY -->
+    <!-- ENGINEERING METHODOLOGY (AI-ASSISTED HIGH-VELOCITY WORKFLOW) -->
     <section class="section">
       <h2 class="section-title">
-        <span>Engineering Methodology: High-Leverage AI-Assisted Coding</span>
-        <span class="section-tag">Tested &bull; Verified &bull; Non-Generic</span>
+        <span class="section-title-left">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Engineering Methodology: High-Leverage AI-Assisted Coding
+        </span>
+        <span class="section-badge">Tested • Compiler-Verified • Non-Generic</span>
       </h2>
-      <div class="callout-box">
-        <strong>Philosophy:</strong> AI coding tools are not an auto-pilot—they are a high-speed precision instrument. True velocity comes from expert prompt decomposition, strict compiler verification, AST validation, and aggressive automated test synthesis to eliminate hallucinations and regressions.
+      <!-- 3-Step Interactive Workflow Strip -->
+      <div class="ai-pipeline-grid">
+        <div class="ai-step-card">
+          <div class="ai-step-title">1. Prompt Decomposition</div>
+          <div class="ai-step-desc">Deconstruct complex product specs into granular, deterministic interfaces and state machines before code generation.</div>
+        </div>
+        <div class="ai-step-card">
+          <div class="ai-step-title">2. AST & Compiler Checks</div>
+          <div class="ai-step-desc">Enforce strict TypeScript types, Dart static analyzer passes, and linter gates to eliminate hallucinations immediately.</div>
+        </div>
+        <div class="ai-step-card">
+          <div class="ai-step-title">3. Test Synthesis & CI</div>
+          <div class="ai-step-desc">Synthesize automated regression tests and verification harnesses to ensure regression-free releases at 3x velocity.</div>
+        </div>
       </div>
       <ul class="bullet-list">
         <li>
           <strong>Daily Toolchain:</strong> Expert proficiency with <strong>Claude Code, Cursor, Copilot, Grok, and Antigravity</strong> to accelerate boilerplate implementation, schema drafting, and complex API wrapper construction.
-        </li>
-        <li>
-          <strong>Verification & Defect Isolation:</strong> Rigorously inspect and refactor all AI-generated code against strict TypeScript rules, Dart static analysis, and defensive runtime error-handling patterns before merging.
         </li>
         <li>
           <strong>Automated Testing & Documentation:</strong> Utilize LLMs to generate exhaustive unit test suites covering boundary conditions and to maintain living documentation schemas for plant, warehouse, and non-technical administrative teams.
@@ -604,24 +989,23 @@
       </ul>
     </section>
 
-    <!-- EDUCATION & PROFESSIONAL ATTRIBUTES -->
+    <!-- EDUCATION & ENGAGEMENT AVAILABILITY -->
     <section class="section" style="margin-bottom: 0;">
       <h2 class="section-title">
-        <span>Education, Foundations & Engagement</span>
-        <span class="section-tag">Qualifications & Availability</span>
+        <span class="section-title-left">
+          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Foundations, Values & Availability
+        </span>
+        <span class="section-badge">Ready for Engagement</span>
       </h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <span class="skill-label">Computer Science:</span>
-          <span class="skill-items">Strong foundations in Data Structures, Object-Oriented Architecture, Relational/NoSQL Database Design, and Systems Security</span>
+      <div class="availability-card">
+        <div class="avail-text">
+          <strong>Computer Science Foundations:</strong> Data Structures, OOP, Distributed Systems & Database Design.<br>
+          <strong>Core Values:</strong> Extreme Ownership from concept to post-release monitoring; zero finger-pointing, fast turnaround.
         </div>
-        <div class="skill-category">
-          <span class="skill-label">Work Ethic & Values:</span>
-          <span class="skill-items"><strong>Extreme Ownership:</strong> Total responsibility from concept to post-release monitoring; zero finger-pointing, fast turnaround</span>
-        </div>
-        <div class="skill-category">
-          <span class="skill-label">Availability:</span>
-          <span class="skill-items">Full-time ongoing remote engagement; overlap with US Eastern (ET) / Pacific (PT) timezones; immediate availability</span>
+        <div class="avail-pill">
+          <span class="pulse-dot"></span>
+          Available for Hire • US Overlap
         </div>
       </div>
     </section>

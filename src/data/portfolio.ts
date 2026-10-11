@@ -16,7 +16,7 @@ export const profile = {
   links: {
     linkedin: "https://www.linkedin.com/in/mohit-khatri-714711340",
     github: "https://github.com/Moturamji",
-    resume: "#", // drop a PDF in /public and point here, e.g. "/dhruvil-bhingradiya-resume.pdf"
+    resume: "/dhruvil-bhingradiya-resume.pdf",
   },
 } as const;
 

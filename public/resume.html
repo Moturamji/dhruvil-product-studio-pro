@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhruvil Bhingradiya - Full-Stack & AI Product Developer Resume</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --muted: #64748b;
+      --accent: #1d4ed8;
+      --accent-light: #eff6ff;
+      --accent-border: #bfdbfe;
+      --border: #cbd5e1;
+      --border-subtle: #e2e8f0;
+      --bg: #ffffff;
+      --tag-bg: #f8fafc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--primary);
+      background-color: #525659;
+      line-height: 1.33;
+      font-size: 8.6pt;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .resume-container {
+      width: 8.5in;
+      margin: 15px auto;
+      background: var(--bg);
+    }
+
+    .page {
+      width: 8.5in;
+      min-height: 11in;
+      padding: 0.35in 0.42in;
+      background: white;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .page + .page {
+      margin-top: 15px;
+    }
+
+    /* Header styling */
+    .header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    .name-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3px;
+    }
+
+    .name {
+      font-size: 21pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .title {
+      font-size: 10.2pt;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.2px;
+      margin-top: 3px;
+    }
+
+    .header-aside {
+      text-align: right;
+      font-size: 8.1pt;
+      color: var(--secondary);
+      font-weight: 600;
+      line-height: 1.25;
+    }
+
+    .contacts-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 8.3pt;
+      color: var(--secondary);
+      margin-top: 4px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .contact-item a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-sep {
+      color: var(--border);
+    }
+
+    /* Section styling */
+    .section {
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 9.1pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      border-bottom: 1.2px solid var(--border);
+      padding-bottom: 2px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-title .section-tag {
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Profile text */
+    .profile-text {
+      font-size: 8.4pt;
+      color: var(--secondary);
+      line-height: 1.36;
+      text-align: justify;
+    }
+
+    .profile-text strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.2px;
+    }
+
+    .skill-category {
+      display: flex;
+      font-size: 8.2pt;
+      line-height: 1.27;
+    }
+
+    .skill-label {
+      width: 152px;
+      flex-shrink: 0;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .skill-items {
+      color: var(--secondary);
+    }
+
+    /* Projects / Experience items */
+    .item-block {
+      margin-bottom: 6px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5px;
+    }
+
+    .item-title {
+      font-size: 9.2pt;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .item-subtitle {
+      font-size: 8.2pt;
+      font-weight: 700;
+      color: var(--accent);
+      margin-left: 6px;
+    }
+
+    .item-meta {
+      font-size: 7.9pt;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .item-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3.5px;
+      margin: 1.5px 0 3px 0;
+    }
+
+    .badge {
+      font-size: 7.1pt;
+      font-weight: 600;
+      background: var(--tag-bg);
+      color: var(--secondary);
+      padding: 0.6px 5px;
+      border-radius: 3px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .badge.highlight {
+      background: var(--accent-light);
+      color: var(--accent);
+      border-color: var(--accent-border);
+      font-weight: 700;
+    }
+
+    ul.bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 11px;
+      margin-bottom: 2px;
+      font-size: 8.2pt;
+      color: var(--secondary);
+      line-height: 1.31;
+    }
+
+    ul.bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 1px;
+      top: -1px;
+      color: var(--accent);
+      font-size: 8.8pt;
+      font-weight: bold;
+    }
+
+    ul.bullet-list li strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Callout Box for AI Coding */
+    .callout-box {
+      background: var(--tag-bg);
+      border-left: 3px solid var(--accent);
+      padding: 3.5px 7px;
+      border-radius: 0 3px 3px 0;
+      margin: 2px 0 3.5px 0;
+      font-size: 8.1pt;
+      color: var(--secondary);
+      line-height: 1.29;
+    }
+
+    .callout-box strong {
+      color: var(--primary);
+    }
+
+    /* Page 2 slightly tuned spacing */
+    #page-2 .section {
+      margin-bottom: 7px;
+    }
+    #page-2 .item-block {
+      margin-bottom: 5.5px;
+    }
+    #page-2 ul.bullet-list li {
+      margin-bottom: 1.8px;
+      font-size: 8.15pt;
+      line-height: 1.30;
+    }
+
+    /* Print media rules */
+    @page {
+      size: letter portrait;
+      margin: 0.33in 0.40in;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .resume-container {
+        width: 100%;
+        margin: 0;
+      }
+      .page {
+        width: 100%;
+        min-height: 0;
+        padding: 0;
+        margin: 0;
+        page-break-after: always;
+        break-after: page;
+      }
+      .page:last-child {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="resume-container">
+  <!-- PAGE 1 -->
+  <div class="page" id="page-1">
+    <header class="header">
+      <div class="name-title-row">
+        <div>
+          <h1 class="name">Dhruvil Bhingradiya</h1>
+          <div class="title">Full-Stack & Product Developer &bull; Web, Mobile & Distributed Systems</div>
+        </div>
+        <div class="header-aside">
+          Remote (Full US ET/PT Overlap)<br>
+          3+ Years Professional Exp. &bull; Extreme Ownership
+        </div>
+      </div>
+      <div class="contacts-row">
+        <span class="contact-item">
+          <strong>Email:</strong> <a href="mailto:mohitnkhatri@gmail.com">mohitnkhatri@gmail.com</a>
+        </span>
+        <span class="contact-sep">&bull;</span>
+        <span class="contact-item">
+          <strong>GitHub:</strong> <a href="https://github.com/Moturamji" target="_blank">github.com/Moturamji</a>
+        </span>
+        <span class="contact-sep">&bull;</span>
+        <span class="contact-item">
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohit-khatri-714711340" target="_blank">linkedin.com/in/mohit-khatri-714711340</a>
+        </span>
+        <span class="contact-sep">&bull;</span>
+        <span class="contact-item">
+          <strong>Live Products:</strong> <a href="https://tool-web.dev" target="_blank">tool-web.dev</a>
+        </span>
+      </div>
+    </header>
+
+    <!-- EXECUTIVE PROFILE -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>Executive Profile</span>
+        <span class="section-tag">Production Focus &bull; Extreme Ownership</span>
+      </h2>
+      <p class="profile-text">
+        Full-Stack Product Developer with <strong>3+ years of professional engineering experience</strong> taking software systems from blank canvases to production deployment. Proven track record architecting complex multi-role digital products, including a <strong>complete LMS & video-streaming infrastructure (Lux Trader)</strong>, a <strong>3-sided marketplace & dynamic booking platform</strong>, and a <strong>client-side WebAssembly utility suite (ToolWeb)</strong>. Operates with strict Extreme Ownership: rapidly mastering unfamiliar codebases, decomposing ambiguous stakeholder requests into resilient technical specifications, and delivering hardened web and mobile applications with clear technical documentation. Daily practitioner of high-leverage <strong>AI-assisted engineering</strong> (Claude Code, Cursor, Copilot, Grok)—enforcing prompt decomposition, AST verification, and automated regression testing to ship clean, regression-free code at 3x velocity.
+      </p>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>Core Technical Competencies</span>
+        <span class="section-tag">Full-Stack & Systems Architecture</span>
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <span class="skill-label">Frontend & Web:</span>
+          <span class="skill-items">TypeScript, JavaScript (ES6+), React, TanStack Query/Router, HTML5/CSS3, Tailwind CSS, WebAssembly (Rust), Web APIs</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-label">Mobile & Cross-Platform:</span>
+          <span class="skill-items">Flutter & Dart (Android & iOS), Local-First Architecture, SQLite, State Management (Riverpod/Provider), FCM Push Notifications</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-label">Backend & Cloud:</span>
+          <span class="skill-items">Node.js, Express, RESTful APIs, Firebase (Auth, Firestore, Cloud Functions, Storage), Supabase, PostgreSQL, SQLite</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-label">Architecture & Media:</span>
+          <span class="skill-items">Multi-Sided Marketplaces, LMS & Training Systems, FFmpeg Video Transcoding, HLS Multi-Bitrate Streaming, Multi-Role RBAC</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-label">Payments & Integrations:</span>
+          <span class="skill-items">Dynamic Payment Architectures, Razorpay & Stripe Checkout, Webhooks, Third-Party REST Integrations, Inventory/Booking Locks</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-label">AI-Assisted Workflow:</span>
+          <span class="skill-items">Claude Code, Cursor, Antigravity, Grok, GitHub Copilot (Prompt chaining, AST refactoring, automated test synthesis, verification harnesses)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE FEATURED SYSTEMS & PRODUCTION WORK -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>Featured Production Systems</span>
+        <span class="section-tag">Architected & Delivered End-to-End</span>
+      </h2>
+
+      <!-- LUX TRADER -->
+      <div class="item-block">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Lux Trader — Production Trading LMS & Video Infrastructure</span>
+            <span class="item-subtitle">Full-Stack Product Developer</span>
+          </div>
+          <div class="item-meta">Client Delivery &bull; Live Ecosystem</div>
+        </div>
+        <div class="item-badges">
+          <span class="badge highlight">LMS / Training Platform</span>
+          <span class="badge highlight">Flutter Mobile App</span>
+          <span class="badge">Node.js Backend & Admin API</span>
+          <span class="badge">FFmpeg / HLS Video Pipeline</span>
+          <span class="badge">Firebase & Cloud Functions</span>
+          <span class="badge">Razorpay Dynamic Payments</span>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <strong>End-to-End System Architecture:</strong> Engineered a complete learning management ecosystem comprising a production Flutter mobile application, an administrative web dashboard, and an automated Node.js video processing backend.
+          </li>
+          <li>
+            <strong>Adaptive Video Transcoding Pipeline:</strong> Built a dedicated Node.js microservice utilizing FFmpeg to ingest raw master lectures and transcode them into multi-resolution HLS (HTTP Live Streaming) streams, eliminating buffer stalls on low-bandwidth connections.
+          </li>
+          <li>
+            <strong>Modular LMS Curriculum & Analytics:</strong> Implemented structured course hierarchies, lesson progress tracking, resume-where-left-off playback state, daily educational tips, and student engagement telemetry for platform administrators.
+          </li>
+          <li>
+            <strong>Dynamic Zero-Downtime Payments:</strong> Designed an administrative payment configuration module that dynamically routes and updates Razorpay payment gateways and course pricing from the admin panel without requiring mobile client app redeployments.
+          </li>
+          <li>
+            <strong>Operations & Plant Handoff:</strong> Produced comprehensive operational documentation, database schemas, and clean API contracts, enabling non-technical plant and office personnel to manage video assets, courses, and student permissions independently.
+          </li>
+        </ul>
+      </div>
+
+      <!-- CINEMA & SERVICE MARKETPLACE PLATFORM -->
+      <div class="item-block">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Cinema & Service Multi-Role Marketplace Platform</span>
+            <span class="item-subtitle">Platform Architect & Lead Developer</span>
+          </div>
+          <div class="item-meta">Multi-Role Commercial Product</div>
+        </div>
+        <div class="item-badges">
+          <span class="badge highlight">Multi-Sided Marketplace</span>
+          <span class="badge highlight">3 Distinct Roles (Buyer / Vendor / Super Admin)</span>
+          <span class="badge">Dynamic Seating Engine</span>
+          <span class="badge">Tiered Pricing Matrices</span>
+          <span class="badge">Reservation Lock Engine</span>
+          <span class="badge">Digital QR Ticketing</span>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <strong>Three-Role Marketplace Ecosystem:</strong> Architected a multi-sided marketplace connecting end customers, service vendors (cinema operators), and platform super-administrators with isolated role-based access control (RBAC).
+          </li>
+          <li>
+            <strong>Visual Territory & Hall Builder:</strong> Developed a drag-and-configure interactive visual engine enabling vendor operators to build custom layout grids, row presets, and seating categories tailored to varying venue capacities.
+          </li>
+          <li>
+            <strong>Concurrency & Optimistic Locking:</strong> Implemented a collision-free reservation session manager with temporary checkout locks to prevent duplicate bookings during peak-demand flash traffic spikes.
+          </li>
+          <li>
+            <strong>Dynamic Surcharge & Pricing Engine:</strong> Formulated flexible pricing algorithms accommodating base category rates, showtime percentage adjustments, weekend surcharges, and platform commission fee deductions.
+          </li>
+          <li>
+            <strong>Operator & Platform Dashboards:</strong> Delivered real-time administrative dashboards tracking occupancy rates, gross revenue, category performance, and automated digital QR ticket/pass generation.
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page-2">
+    <!-- TOOLWEB + MOBILE SYSTEMS -->
+    <section class="section" style="margin-top: 0;">
+      <h2 class="section-title">
+        <span>Featured Production Systems (Continued)</span>
+        <span class="section-tag">Performance & Client-Side Engineering</span>
+      </h2>
+
+      <!-- TOOLWEB -->
+      <div class="item-block">
+        <div class="item-header">
+          <div>
+            <span class="item-title">ToolWeb — Privacy-First Web Utility & Compute Platform</span>
+            <span class="item-subtitle">Creator & Lead Engineer</span>
+          </div>
+          <div class="item-meta"><a href="https://tool-web.dev" target="_blank" style="color: var(--accent); text-decoration: none;">tool-web.dev</a> &bull; Production Live</div>
+        </div>
+        <div class="item-badges">
+          <span class="badge highlight">WebAssembly (Rust Engine)</span>
+          <span class="badge highlight">TypeScript / ESNext</span>
+          <span class="badge">Client-Side Compute</span>
+          <span class="badge">20+ Developer Tools</span>
+          <span class="badge">Zero Data Egress</span>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <strong>Client-Side High-Performance Architecture:</strong> Built a browser-native utility suite of 20+ specialized developer and file tools (image compressor, JSON-to-Dart generator, AST transformers, regex tester) operating entirely within the user's browser sandbox.
+          </li>
+          <li>
+            <strong>Rust & WebAssembly Computational Core:</strong> Compiled compute-heavy processing modules (image compression, binary format conversions, complex parsers) to WebAssembly via Rust, slashing execution times to near-native speeds.
+          </li>
+          <li>
+            <strong>Developer Format Converters:</strong> Implemented AST-level transformation tools including JSON-to-Dart model generators and HTML-to-Flutter converter pipelines with instantaneous client-side preview rendering.
+          </li>
+          <li>
+            <strong>Zero-Cost & Privacy-Compliant:</strong> Eliminated server bandwidth and processing egress costs while guaranteeing 100% data privacy for confidential documents and proprietary schema snippets.
+          </li>
+        </ul>
+      </div>
+
+      <!-- MOBILE & LOCAL-FIRST PRODUCTS -->
+      <div class="item-block">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Production Mobile & Local-First Systems: StyleCalc & TaskFlow</span>
+            <span class="item-subtitle">Mobile Engineer</span>
+          </div>
+          <div class="item-meta">Google Play Store &bull; Open Architecture</div>
+        </div>
+        <div class="item-badges">
+          <span class="badge highlight">Google Play Live</span>
+          <span class="badge">Flutter & Dart</span>
+          <span class="badge">Offline-First Local Storage</span>
+          <span class="badge">Hardware Background Alarms</span>
+          <span class="badge">Zero-Crash Metric</span>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <strong>Published Product Reliability (StyleCalc):</strong> Shipped a custom-styled calculator utility to Google Play, maintaining a 100% crash-free user session metric with instantaneous touch-response rendering and full theme persistence.
+          </li>
+          <li>
+            <strong>Local-First Scheduling Engine (TaskFlow):</strong> Designed an offline-first productivity application featuring stateful task life-cycles (scheduled, completed, overdue alert states), persistent local alarm scheduling, and on-device weekly performance telemetry.
+          </li>
+          <li>
+            <strong>Defensive Mobile Architecture:</strong> Structured declarative Flutter widget trees with granular state isolation to eliminate redundant view rebuilds, optimizing battery and CPU utilization on resource-constrained devices.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL WORK HISTORY -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>Professional Experience & Delivery Track Record</span>
+        <span class="section-tag">Extreme Ownership & Execution</span>
+      </h2>
+      <div class="item-block">
+        <div class="item-header">
+          <div>
+            <span class="item-title">Full-Stack & Product Developer</span>
+            <span class="item-subtitle">Independent Engineering & Client Delivery</span>
+          </div>
+          <div class="item-meta">2022 &ndash; Present (3+ Years) &bull; Remote</div>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <strong>Autonomous Product Delivery:</strong> Acted as end-to-end technical owner for businesses and startups—scoping technical specifications from unstructured client conversations, establishing architecture diagrams, and delivering production web/mobile apps.
+          </li>
+          <li>
+            <strong>Rapid Adoption of Unfamiliar Tech Stacks:</strong> Consistently audited, diagnosed, and extended third-party codebases and APIs, resolving legacy performance bottlenecks and deploying mission-critical integrations under tight sprint deadlines.
+          </li>
+          <li>
+            <strong>Clear Communication & Extreme Ownership:</strong> Provided structured async status memos, video walkthroughs, and detailed maintenance documentation to cross-functional stakeholders, ensuring zero ambiguity and seamless operational handoffs.
+          </li>
+          <li>
+            <strong>Production Reliability & Quality:</strong> Maintained automated build verification pipelines, strict semantic versioning, and defensible error budgets, ensuring zero regressions on live deployed services.
+          </li>
+          <li>
+            <strong>US Eastern / Pacific Timezone Alignment:</strong> Maintained consistent 4+ hour daily overlap with US business hours, fostering frictionless collaborative workflows with North American clients and engineering teams.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RIGOROUS AI-ASSISTED CODING METHODOLOGY -->
+    <section class="section">
+      <h2 class="section-title">
+        <span>Engineering Methodology: High-Leverage AI-Assisted Coding</span>
+        <span class="section-tag">Tested &bull; Verified &bull; Non-Generic</span>
+      </h2>
+      <div class="callout-box">
+        <strong>Philosophy:</strong> AI coding tools are not an auto-pilot—they are a high-speed precision instrument. True velocity comes from expert prompt decomposition, strict compiler verification, AST validation, and aggressive automated test synthesis to eliminate hallucinations and regressions.
+      </div>
+      <ul class="bullet-list">
+        <li>
+          <strong>Daily Toolchain:</strong> Expert proficiency with <strong>Claude Code, Cursor, Copilot, Grok, and Antigravity</strong> to accelerate boilerplate implementation, schema drafting, and complex API wrapper construction.
+        </li>
+        <li>
+          <strong>Verification & Defect Isolation:</strong> Rigorously inspect and refactor all AI-generated code against strict TypeScript rules, Dart static analysis, and defensive runtime error-handling patterns before merging.
+        </li>
+        <li>
+          <strong>Automated Testing & Documentation:</strong> Utilize LLMs to generate exhaustive unit test suites covering boundary conditions and to maintain living documentation schemas for plant, warehouse, and non-technical administrative teams.
+        </li>
+      </ul>
+    </section>
+
+    <!-- EDUCATION & PROFESSIONAL ATTRIBUTES -->
+    <section class="section" style="margin-bottom: 0;">
+      <h2 class="section-title">
+        <span>Education, Foundations & Engagement</span>
+        <span class="section-tag">Qualifications & Availability</span>
+      </h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <span class="skill-label">Computer Science:</span>
+          <span class="skill-items">Strong foundations in Data Structures, Object-Oriented Architecture, Relational/NoSQL Database Design, and Systems Security</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-label">Work Ethic & Values:</span>
+          <span class="skill-items"><strong>Extreme Ownership:</strong> Total responsibility from concept to post-release monitoring; zero finger-pointing, fast turnaround</span>
+        </div>
+        <div class="skill-category">
+          <span class="skill-label">Availability:</span>
+          <span class="skill-items">Full-time ongoing remote engagement; overlap with US Eastern (ET) / Pacific (PT) timezones; immediate availability</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>

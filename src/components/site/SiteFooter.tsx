@@ -46,26 +46,6 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
-                  href={profile.links.linkedin}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href={profile.links.github}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="text-muted-foreground hover:text-foreground text-sm transition-colors"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://tool-web.dev"
                   target="_blank"
                   rel="noreferrer noopener"

@@ -12,11 +12,9 @@ export const profile = {
   experience: "3+ years",
   location: "India — available remotely",
   disciplines: ["Web", "Mobile", "Desktop", "Admin", "APIs"],
-  email: "mohitnkhatri@gmail.com",
+  email: "dhruvilbhingradiya021@gmail.com",
   links: {
-    linkedin: "https://www.linkedin.com/in/mohit-khatri-714711340",
-    github: "https://github.com/Moturamji",
-    resume: "/dhruvil-bhingradiya-resume.pdf",
+    resume: "/dhruvil-bhingradiya-resume.pdf" as string,
   },
 } as const;
 

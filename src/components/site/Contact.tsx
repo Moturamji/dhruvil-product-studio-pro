@@ -6,8 +6,6 @@ import { Section } from "./Section";
 
 const channels = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-  { label: "LinkedIn", value: profile.links.linkedin.replace(/^https?:\/\//, ""), href: profile.links.linkedin },
-  { label: "GitHub", value: profile.links.github.replace(/^https?:\/\//, ""), href: profile.links.github },
 ].filter((c) => c.href && c.href !== "#");
 
 const fieldClass =
